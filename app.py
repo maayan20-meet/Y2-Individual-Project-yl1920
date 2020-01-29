@@ -81,7 +81,7 @@ def canvas():
 def save_draw():
 	print('aaaaa')
 	new_history_point(request.form['dataURL'], request.form['canvasID'])
-	return redirect(url_for('canvas.html', c=request.form['canvasID']))
+	return redirect(url_for('canvas', c=request.form['canvasID']))
 
 @app.route('/new_canvas')
 def new_canvas():
@@ -93,7 +93,7 @@ def add_canvas():
 	canvas_id = create_canvas(request.form['canvas_name'], login_session['name']).canvas_id
 	new_history_point(blank_canvas_url, canvas_id)
 
-	return redirect(url_for('canvas.html', c=canvas_id))
+	return redirect(url_for('canvas', c=canvas_id))
 
 if __name__ == '__main__':
     app.run(debug=True)

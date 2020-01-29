@@ -141,6 +141,45 @@
             }
         }
     </script>
+
+    <style type="text/css">
+        
+        #green {
+            width:10px;
+            height:10px;
+            background:green;
+        }
+
+        #blue {
+            width:10px;
+            height:10px;
+            background:blue;
+        }
+
+        #red {
+            width:10px;
+            height:10px;
+            background:red;
+        }
+
+        #yellow {
+            width:10px;
+            height:10px;
+            background:yellow;
+        }
+
+        #orange {
+            width:10px;
+            height:10px;
+            background:orange;
+        }
+
+        #black {
+            width:10px;
+            height:10px;
+            background:black;
+        }
+    </style>
     <body onload="init('{{data}}')">
         <div class="container">
             <div class="row">
@@ -152,12 +191,12 @@
             </div>
 
             <div class="row">
-                <div class="col-2" style="width:10px;height:10px;background:green;" id="green" onclick="color(this)"></div>
-                <div class="col-2" style="width:10px;height:10px;background:blue;" id="blue" onclick="color(this)"></div>
-                <div class="col-2" style=";width:10px;height:10px;background:red;" id="red" onclick="color(this)"></div>
-                <div class="col-2" style="width:10px;height:10px;background:yellow;" id="yellow" onclick="color(this)"></div>
-                <div class="col-2" style="width:10px;height:10px;background:orange;" id="orange" onclick="color(this)"></div>
-                <div class="col-2" style="width:10px;height:10px;background:black;" id="black" onclick="color(this)"></div>
+                <div class="col-sm" id="green" onclick="color(this)"></div>
+                <div class="col-sm" id="blue" onclick="color(this)"></div>
+                <div class="col-sm" id="red" onclick="color(this)"></div>
+                <div class="col-sm" id="yellow" onclick="color(this)"></div>
+                <div class="col-sm" id="orange" onclick="color(this)"></div>
+                <div class="col-sm" id="black" onclick="color(this)"></div>
             </div>
 
             <div class="row">

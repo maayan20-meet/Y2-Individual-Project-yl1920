@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<h1>Home</h1>
+
+	{% if name is defined %}
+
+		<p>Hello, {{name}}</p>
+		<a href="/logout">Log out</a>
+		<a href="/canvas_list">Canvas List</a>
+		<a href="/new_canvas">Create a new canvas</a>
+
+	{% else %}
+
+		<a href="/login">Log In</a>
+		<a href="/signup">Sign Up</a>
+
+	{% endif %}	
+
+	{% if error is defined %}
+
+		<h2>An error occured</h2>
+
+	{% endif %}
+
+</body>
+</html>

@@ -101,7 +101,7 @@ function findxy(res, e) {
     if (res == 'down') {
         prevX = currX;
         prevY  = currY;
-        currX = e.clientX - canvas.offsetLeft - 270;
+        currX = e.clientX - canvas.offsetLeft - 320;
         currY = e.clientY - canvas.offsetTop - 150;
 
         flag = true;
@@ -121,7 +121,7 @@ function findxy(res, e) {
         if (flag) {
             prevX = currX;
             prevY = currY;
-            currX = e.clientX - canvas.offsetLeft - 270;
+            currX = e.clientX - canvas.offsetLeft - 320;
             currY = e.clientY - canvas.offsetTop - 150;
             draw();
         }

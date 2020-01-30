@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log in or sign up</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <link rel="stylesheet" type="text/css" href="/css/logsign.css">
+<body>
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1">
+                <h3>Login</h3>
+                
+                    <form class="form-group" action="/loggedin" method="POST">
+                        <input type="text" class="form-control" placeholder="Username *" name="username" />
+                        <br>
+                        <input type="password" class="form-control" placeholder="Your Password *" name="password" />
+                        <br>
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </form>
+                
+            </div>
+            <div class="col-md-6 login-form-2">
+                <div class="login-logo">
+                    <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                </div>
+                <h3>Signup</h3>
+                    <form class="form-group" action="/adduser" method="POST">
+                        <input type="text" class="form-control" placeholder="Username *" name="username" />
+                        <br>
+                        <input type="password" class="form-control" placeholder="Your Password *" name="password" />
+                        <br>
+                        <input type="submit" class="btnSubmit" value="Signup" />
+                    </form>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

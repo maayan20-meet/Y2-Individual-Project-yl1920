@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>{{username}}</title>
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2D3047;">
+	  <a class="navbar-brand" href="#">gitdraw</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/home">hello, {{username}}<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="/new_canvas?u={{username}}">Create a canvas</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="/canvas_list">Suggested canvases</a>
+	      </li>
+	      <li class="nav-item">
+	      	<a class="nav-link" href="/logout">Log out</a>
+	      </li>
+	    </ul>
+	    <form action="/canvas_list" method="GET" id="search_form" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" name="canvas_key" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" form="search_form">Search</button>
+        </form>
+	  </div>
+	</nav>
+
+	<br>
+	<br>
+
+	<div class="container">
+		<div class="list-group h-100 row align-items-center">
+
+			{% if not search %}
+				<h3 class = "list-group-item-heading">Your canvases</h3>
+			{% else %}
+				<h3 class = "list-group-item-heading">Search results</h3>
+			{% endif %}
+
+			{% for canvas in canvases%}
+			    <a href="/canvas?c={{canvas.canvas_id}}" class="list-group-item list-group-item-action">
+			        <div class="d-flex w-100 justify-content-between">
+			            <h4>{{canvas.name}}</h4>
+			        </div>        
+			        <p>by {{canvas.user_name}}</p>
+		    	</a>
+			{% endfor %}
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

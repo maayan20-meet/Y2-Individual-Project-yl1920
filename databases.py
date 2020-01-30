@@ -37,17 +37,13 @@ def user_exist(name):
 
 	return user is not None
 
-#Canvas functions:
-
-def new_canvas(name, user_id):
+def get_user_id(name):
 
 	session = create_thread()
 
-	canvas = Canvas(name = name, user_id = user_id)
+	return session.query(User).filter_by(name=name).first().user_id
 
-	session.add(canvas)
-	session.commit()
-
+#Canvas functions:
 
 def new_history_point(data, canvas_id):
 
@@ -96,12 +92,30 @@ def get_all_canvases():
 
 	return session.query(Canvas).all()
 
-def create_canvas(canvas_name, user_id):
+def get_canvases_by_name(name):
 
 	session = create_thread()
 
-	canvas = Canvas(name=canvas_name, user_id=user_id)
+	return session.query(Canvas).filter_by(name=name).all()
+
+def get_canvases_by_user_id(user_id):
+
+	session = create_thread()
+
+	return session.query(Canvas).filter_by(user_id=user_id).all()
+
+def create_canvas(canvas_name, user_name):
+
+	session = create_thread()
+
+	canvas = Canvas(name=canvas_name, user_name=user_name, user_id=get_user_id(user_name))
 	session.add(canvas)
 	session.commit()
 
 	return canvas
+
+def get_canvas_name(canvas_id):
+
+	session = create_thread()
+
+	return session.query(Canvas).filter_by(canvas_id=canvas_id).first().name

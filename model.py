@@ -20,6 +20,7 @@ class Canvas(Base):
 	canvas_id = Column(Integer, primary_key=True)
 	name = Column(String)
 	user_id = Column(Integer)
+	user_name = Column(String)
 
 
 class CanvasHistory(Base):

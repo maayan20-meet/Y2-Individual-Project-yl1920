@@ -113,5 +113,9 @@ def send_img(path):
 def send_js(path):
 	return send_from_directory('js', path)
 
+@app.route('/favicon.ico')
+def get_icon():
+	send_from_directory('img', 'edit.svg')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -10,13 +10,13 @@
     position: absolute;
     width: 20%;
     margin-top: 19%;
-    background: #FFFD82;
+    background: #20809f;
     border-radius: 4.5rem;
     padding: 5%;
 }
 .login-form-1{
     padding: 9%;
-    background:#FFFD82;
+    background: #20809f;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-1 h3{
@@ -26,7 +26,7 @@
 }
 .login-form-2{
     padding: 9%;
-    background: #2D3047;
+    background: #F4BD3A;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-2 h3{
